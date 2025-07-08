@@ -39,3 +39,17 @@
 
 # debug information files
 *.dwo
+
+# CMake
+*[bB]uild*
+
+# VSCode
+*vscode*
+*VSCode*
+
+# Install
+install
+
+# Temporary
+*.rc
+*.qrc
