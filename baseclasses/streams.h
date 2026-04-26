@@ -275,34 +275,19 @@ extern "C" const GUID DECLSPEC_SELECTANY MEDIASUBTYPE_P016 = {909193296, 0x0000,
 
 #if !defined(STRMBASE_BUILD) && defined(__MINGW32__)
 
-#define __in
-#define __out
-#define __deref_in
-#define __deref_inout_opt
-#define __in_bcount_opt
-#define __in_ecount_opt
-#define __field_ecount_opt
-#define __deref_out_range
-#define __out_range
-#define __control_entrypoint
-#define __success
-#define AM_NOVTABLE
-#define __AMVIDEO__
-#define WIDTHBYTES
-#define DIBWIDTHBYTES
-#define _DIBSIZE
-#define DIBSIZE
-#define TRUECOLOR
-#define COLORS
-#define BITMASKS
-#define SIZE_EGA_PALETTE
-#define SIZE_PALETTE
-#define SIZE_MASKS
-#define SIZE_PREHEADER
-#define SIZE_VIDEOHEADER
-#define PALETTISED
-#define PALETTE_ENTRIES
-#define HEADER
+#undef __in
+#undef __out
+#undef __deref_in
+#undef __deref_inout_opt
+#undef __in_bcount_opt
+#undef __in_ecount_opt
+#undef __field_ecount_opt
+#undef __deref_out_range
+#undef __out_range
+#undef __control_entrypoint
+#undef __success
+#undef AM_NOVTABLE
+#undef __AMVIDEO__
 
 #endif
 
