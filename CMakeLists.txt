@@ -49,3 +49,4 @@ add_library(strmbase STATIC
 
 target_include_directories(strmbase PUBLIC $<BUILD_INTERFACE:${BASECLASSES_DIR}>)
 target_link_libraries(strmbase PRIVATE strmiids winmm)
+target_compile_definitions(strmbase PRIVATE STRMBASE_BUILD)

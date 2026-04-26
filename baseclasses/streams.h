@@ -149,6 +149,7 @@ LONG_PTR _SetWindowLongPtr(HWND hwnd, int nIndex, T p)
 ///////////////////////////////////////////////////////////////////////////
 
 #ifdef __MINGW32__
+
 #include <intsafe.h>
 #include <sal.h>
 #define __in
@@ -226,6 +227,7 @@ __inline HRESULT SAFE_DIBSIZE(_In_ const BITMAPINFOHEADER *pbi, _Out_ DWORD *pcb
 
 extern "C" const GUID DECLSPEC_SELECTANY MEDIASUBTYPE_P010 = {808530000, 0x0000, 0x0010, {0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71} };
 extern "C" const GUID DECLSPEC_SELECTANY MEDIASUBTYPE_P016 = {909193296, 0x0000, 0x0010, {0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71} };
+
 #endif
 
 #include <strmif.h>     // Generated IDL header file for streams interfaces
@@ -271,7 +273,38 @@ extern "C" const GUID DECLSPEC_SELECTANY MEDIASUBTYPE_P016 = {909193296, 0x0000,
 #include <edevdefs.h>   // External device control interface defines
 #include <audevcod.h>   // audio filter device error event codes
 
+#if !defined(STRMBASE_BUILD) && defined(__MINGW32__)
 
+#define __in
+#define __out
+#define __deref_in
+#define __deref_inout_opt
+#define __in_bcount_opt
+#define __in_ecount_opt
+#define __field_ecount_opt
+#define __deref_out_range
+#define __out_range
+#define __control_entrypoint
+#define __success
+#define AM_NOVTABLE
+#define __AMVIDEO__
+#define WIDTHBYTES
+#define DIBWIDTHBYTES
+#define _DIBSIZE
+#define DIBSIZE
+#define TRUECOLOR
+#define COLORS
+#define BITMASKS
+#define SIZE_EGA_PALETTE
+#define SIZE_PALETTE
+#define SIZE_MASKS
+#define SIZE_PREHEADER
+#define SIZE_VIDEOHEADER
+#define PALETTISED
+#define PALETTE_ENTRIES
+#define HEADER
+
+#endif
 
 #else
     #ifdef DEBUG
